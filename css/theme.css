@@ -1,10 +1,17 @@
 body {
     background-color: #97defc;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 
 .raise {
-    box-shadow: 20px 20px 50px #88c8e3,
-        -30px -30px 60px #c1ebfd;
+    box-shadow: 20px 20px 50px #6a9bb0,
+        -30px -30px 60px #d5f2fe;
     width: 800px;
     margin: 0 auto;
+    border-radius: 50%;
+}
+
+h1 {
+    margin: 15px;
+    text-align: center;
 }

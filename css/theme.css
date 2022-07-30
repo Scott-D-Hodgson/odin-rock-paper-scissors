@@ -17,9 +17,17 @@ h1 {
     text-align: center;
 }
 
+p {
+    margin: 15px;
+}
+
 .cardbox {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.card {
+    flex: 1;
 }

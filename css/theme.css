@@ -10,14 +10,21 @@ body {
 }
 
 .raise {
-    box-shadow: 20px 20px 50px #6a9bb0,
-        -30px -30px 60px #f5fcff;
+    box-shadow: 10px 10px 50px #6a9bb0,
+        -10px -10px 100px #f5fcff;
+    border-radius: 10px;
+}
+
+.sink {
+    box-shadow: inset 10px 10px 50px #6a9bb0,
+        inset -10px -10px 100px #f5fcff;
     border-radius: 10px;
 }
 
 h1 { 
     margin: 15px;
     text-align: center;
+    padding: 15px;
 }
 
 p {
@@ -33,4 +40,6 @@ p {
 
 .card {
     flex: 1;
+    width: 20%;
+    height: 30px;
 }

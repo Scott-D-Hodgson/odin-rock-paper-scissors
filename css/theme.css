@@ -4,11 +4,14 @@ body {
     font-family: 'Mochiy Pop One', sans-serif;
 }
 
+.content {
+    width: 800px;
+    margin: 0 auto;
+}
+
 .raise {
     box-shadow: 20px 20px 50px #6a9bb0,
         -30px -30px 60px #f5fcff;
-    width: 800px;
-    margin: 0 auto;
     border-radius: 10px;
 }
 

@@ -1,8 +1,10 @@
 body {
-    background-color: #fff8dc;
+    background-color: #97defc;
 }
 
 .raise {
-    box-shadow: 20px 20px 50px #e6dfc6,
-        -30px -30px 60px #fffcf1;
+    box-shadow: 20px 20px 50px #88c8e3,
+        -30px -30px 60px #c1ebfd;
+    width: 800px;
+    margin: 0 auto;
 }

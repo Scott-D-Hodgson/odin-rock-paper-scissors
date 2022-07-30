@@ -1,17 +1,25 @@
 body {
     background-color: #97defc;
+    color: #581845;
     font-family: 'Mochiy Pop One', sans-serif;
 }
 
 .raise {
     box-shadow: 20px 20px 50px #6a9bb0,
-        -30px -30px 60px #d5f2fe;
+        -30px -30px 60px #f5fcff;
     width: 800px;
     margin: 0 auto;
-    border-radius: 50%;
+    border-radius: 10px;
 }
 
-h1 {
+h1 { 
     margin: 15px;
     text-align: center;
+}
+
+.cardbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }

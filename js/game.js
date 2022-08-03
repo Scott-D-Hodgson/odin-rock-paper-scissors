@@ -39,15 +39,15 @@ function play(player, computer) {
 
 (function () {
     let button = document.getElementById("playerRock");
-    element.addEventListener("click", function () {
+    button.addEventListener("click", function () {
         play(0, getChoice());
     });
     button = document.getElementById("playerPaper");
-    element.addEventListener("click", function () {
+    button.addEventListener("click", function () {
         play(1, getChoice());
     });
     button = document.getElementById("playerScissors");
-    element.addEventListener("click", function () {
+    button.addEventListener("click", function () {
         play(2, getChoice());
     });
 })();

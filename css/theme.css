@@ -53,6 +53,13 @@ button.raise:hover, button.raise:focus {
     color: #97defc;
 }
 
+button.selected, div.selected {
+    box-shadow: inset 5px 5px 5px #6a9bb0,
+        inset -5px -5px 5px #f5fcff;
+    background-color: #581845;
+    color: #97defc;
+}
+
 .cardbox {
     display: flex;
     flex-direction: row;

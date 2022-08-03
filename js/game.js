@@ -3,8 +3,42 @@ let playerWin = 0;
 let options = ["Rock", "Paper", "Scissor"];
 
 function getChoice() {
-    return Math.floor((Math.random() * 300) % 3);
+    let result = Math.floor((Math.random() * 300) % 3);
+    let computer = null;
+    switch (result) {
+        case 0:
+            computer = document.getElementById("computerRock");
+            break;
+        case 1:
+            computer = document.getElementById("computerPaper");
+            break;
+        case 2:
+            computer = document.getElementById("computerScissors");
+            break;
+    };
+    if (computer) {
+        computer.classList.add("selected");
+    };
+    return result;
+}
 
+function setChoice(result) {
+    let player = null;
+    switch (result) {
+        case 0:
+            player = document.getElementById("playerRock");
+            break;
+        case 1:
+            player = document.getElementById("playerPaper");
+            break;
+        case 2:
+            player = document.getElementById("playerScissors");
+            break;
+    };
+    if (player) {
+        player.classList.add("selected");
+    };
+    return result;
 }
 
 function update() {
@@ -40,14 +74,14 @@ function play(player, computer) {
 (function () {
     let button = document.getElementById("playerRock");
     button.addEventListener("click", function () {
-        play(0, getChoice());
+        play(setChoice(0), getChoice());
     });
     button = document.getElementById("playerPaper");
     button.addEventListener("click", function () {
-        play(1, getChoice());
+        play(setChoice(1), getChoice());
     });
     button = document.getElementById("playerScissors");
     button.addEventListener("click", function () {
-        play(2, getChoice());
+        play(setChoice(2), getChoice());
     });
 })();

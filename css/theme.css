@@ -43,6 +43,9 @@ button {
 button.raise:hover, button.raise:focus {
     box-shadow: 7px 7px 7px #6a9bb0,
         -7px -7px 7px #f5fcff;
+    outline: none;
+    background-color: #581845;
+    color: #97defc;
 }
 
 .cardbox {

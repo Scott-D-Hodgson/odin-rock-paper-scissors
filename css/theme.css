@@ -2,6 +2,7 @@ body {
     background-color: #97defc;
     color: #581845;
     font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 1rem;
 }
 
 .content {
@@ -32,6 +33,18 @@ p {
     padding: 15px;
 }
 
+button {
+    background-color: inherit;
+    color: inherit;
+    font: inherit;
+    border-style: none;
+}
+
+button.raise:hover {
+    box-shadow: 5px 5px 10px #6a9bb0,
+        -5px -5px 10px #f5fcff;
+}
+
 .cardbox {
     display: flex;
     flex-direction: row;
@@ -42,5 +55,6 @@ p {
 .card {
     flex: 1;
     width: 20%;
-    height: 30px;
+    height: 100px;
+    margin: 15px;
 }

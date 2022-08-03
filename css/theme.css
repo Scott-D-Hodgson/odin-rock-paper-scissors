@@ -6,8 +6,9 @@ body {
 }
 
 .content {
-    width: 800px;
+    width: 90%;
     margin: 0 auto;
+    padding: 15px;
 }
 
 .raise {
@@ -25,18 +26,15 @@ body {
 h1 {
     margin: 15px;
     text-align: center;
-    padding: 15px;
 }
 
 h2 {
     margin: 15px;
     text-align: left;
-    padding: 15px;
 }
 
 p {
     margin: 15px;
-    padding: 15px;
 }
 
 button {

@@ -19,15 +19,15 @@
         <p class="sink">You know the game, you know the rules.  Now is the time to choose your weapon!</p>
         <h2>Your Play</h2>
         <div class="cardbox">
-            <button class="card raise">
+            <button id="playerRock" class="card raise">
                 <span class="fa-regular fa-hand-fist fa-2xl fa-flip-horizontal"></span>
                 <span class="sr-only">Rock</span>
             </button>
-            <button class="card raise">
+            <button id="playerPaper" class="card raise">
                 <span class="fa-regular fa-hand fa-2xl fa-flip-horizontal"></span>
                 <span class="sr-only">Paper</span>
             </button>
-            <button class="card raise">
+            <button id="playerScissors" class="card raise">
                 <span class="fa-regular fa-hand-scissors fa-2xl fa-rotate-90"></span>
                 <span class="sr-only">Scissors</span>
             </button>
@@ -35,19 +35,25 @@
         <h2>Computer's Play</h2>
         <div class="cardbox">
             <div class="card raise">
-                <span class="fa-regular fa-hand-fist fa-2xl fa-flip-horizontal" aria-hidden="true"></span>></span>
+                <span class="fa-regular fa-hand-fist fa-2xl fa-flip-horizontal" aria-hidden="true"></span>
                 <span class="sr-only">Rock</span>
             </div>
             <div class="card raise">
-                <span class="fa-regular fa-hand fa-2xl fa-flip-horizontal" aria-hidden="true"></span>></span>
+                <span class="fa-regular fa-hand fa-2xl fa-flip-horizontal" aria-hidden="true"></span>
                 <span class="sr-only">Paper</span>
             </div>
             <div class="card raise">
-                <span class="fa-regular fa-hand-scissors fa-2xl fa-rotate-90" aria-hidden="true"></span>></span>
+                <span class="fa-regular fa-hand-scissors fa-2xl fa-rotate-90" aria-hidden="true"></span>
                 <span class="sr-only">Scissors</span>
             </div>
         </div>
-        <p class="sink">Score: 0 wins / 0 rounds</p>
+        <p id="result" class="sink">Score: 0 wins / 0 rounds</p>
+        <div>
+            <button class="raise">
+                <span class="fa-regular fa-rotate-left fa-xl"></span>
+                <span class="sr-only">Reset</span>
+            </button>
+        </div> 
     </div>
     <script type="text/javascript" src="./js/game.js"></script>
 </body>

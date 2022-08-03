@@ -1,80 +1,53 @@
-function getComputerChoice() {
-    let option = Math.floor((Math.random() * 300) % 3);
-    switch (option) {
-        case 0:
-            return "Rock";
-        case 1:
-            return "Paper";
-        case 2:
-            return "Scissors";
-    };
+let roundCounter = 0;
+let playerWin = 0;
+let options = ["Rock", "Paper", "Scissor"];
+
+function getChoice() {
+    return Math.floor((Math.random() * 300) % 3);
+
 }
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase().trim();
-    computerSelection = computerSelection.toLowerCase().trim();
-    if (playerSelection === computerSelection) {
-        return "Tie";
-    };
-    let result = {
-        won: false,
-        text: ""
-    };
-    let winPlay = "";
-    let losePlay = "";
-    switch (playerSelection) {
-        case "rock":
-            if (computerSelection === "scissors") {
-                result.won = true;
-                winPlay = "Rock";
-                losePlay = "Scissors";
-            } else {
-                winPlay = "Paper";
-                losePlay = "Rock";
-            };
-            break;
-        case "paper":
-            if (computerSelection === "rock") {
-                result.won = true;
-                winPlay = "Paper";
-                losePlay = "Rock";
-            } else {
-                winPlay = "Scissors";
-                losePlay = "Paper";
-            };
-            break;
-        case "scissors":
-            if (computerSelection === "paper") {
-                result.won = true;
-                winPlay = "Scissors";
-                losePlay = "Paper";
-            } else {
-                winPlay = "Rock";
-                losePlay = "Scissors";
-            };
-            break;
-    };
-    result.text = `You ${result.won ? "Won" : "Lose"}! ${winPlay} beats ${losePlay}`;
-    return result;
+function update() {
+    let result = document.getElementById("result");
+    result.innerText = `Score: ${playerWin} wins / ${roundCounter} rounds`
 }
 
-function game() {
-    let roundsPlayed = 0;
-    let wonByPlayer = 0;
-    for (let i = 0; i < 5; i++) {
-        let result = playRound(
-            prompt("Choose 'rock', 'paper', or 'scissors'"),
-            getComputerChoice()
-        );
-        roundsPlayed++;
-        if (result.wonByPlayer) {
-            wonByPlayer++;
+function play(player, computer) {
+    roundCounter++;
+    if (player !== computer) {
+        switch (player) {
+            case 0:
+                if (computer === 2) {
+                    playerWin++;
+                };
+                break;
+            case 1:
+                if (computer === 0) {
+                    playerWin++;
+                };
+                break;
+            case 2:
+                if (computer === 1) {
+                    playerWin++;
+                };
+                break;
         };
-        console.log(result.text);
     };
-    console.log(`Rounds played: ${ roundsPlayed }`)
+    update();
+    return;
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-//game();
+(function () {
+    let button = document.getElementById("playerRock");
+    element.addEventListener("click", function () {
+        play(0, getChoice());
+    });
+    button = document.getElementById("playerPaper");
+    element.addEventListener("click", function () {
+        play(1, getChoice());
+    });
+    button = document.getElementById("playerScissors");
+    element.addEventListener("click", function () {
+        play(2, getChoice());
+    });
+})();

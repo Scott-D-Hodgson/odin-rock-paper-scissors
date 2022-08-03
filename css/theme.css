@@ -10,18 +10,18 @@ body {
 }
 
 .raise {
-    box-shadow: 10px 10px 50px #6a9bb0,
-        -10px -10px 100px #f5fcff;
+    box-shadow: 5px 5px 5px #6a9bb0,
+        -5px -5px 5px #f5fcff;
     border-radius: 10px;
 }
 
 .sink {
-    box-shadow: inset 10px 10px 50px #6a9bb0,
-        inset -10px -10px 100px #f5fcff;
+    box-shadow: inset 5px 5px 5px #6a9bb0,
+        inset -5px -5px 5px #f5fcff;
     border-radius: 10px;
 }
 
-h1 { 
+h1 {
     margin: 15px;
     text-align: center;
     padding: 15px;
@@ -29,6 +29,7 @@ h1 {
 
 p {
     margin: 15px;
+    padding: 15px;
 }
 
 .cardbox {

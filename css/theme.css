@@ -66,4 +66,7 @@ button.raise:hover, button.raise:focus {
     width: 20%;
     height: 100px;
     margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

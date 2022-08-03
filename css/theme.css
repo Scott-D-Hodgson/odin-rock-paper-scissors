@@ -40,9 +40,9 @@ button {
     border-style: none;
 }
 
-button.raise:hover {
-    box-shadow: 5px 5px 10px #6a9bb0,
-        -5px -5px 10px #f5fcff;
+button.raise:hover, button.raise:focus {
+    box-shadow: 7px 7px 7px #6a9bb0,
+        -7px -7px 7px #f5fcff;
 }
 
 .cardbox {

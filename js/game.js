@@ -47,6 +47,12 @@ function update() {
 }
 
 function play(player, computer) {
+    let elms = document.querySelectorAll("div.selected, button.selected");
+    if (elms) {
+        elms.forEach((item) => {
+            item.classList.remove("selected");
+        });
+    };
     roundCounter++;
     if (player !== computer) {
         switch (player) {

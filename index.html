@@ -6,9 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a042a18eb1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div class="content raise">
+        <h1>Rock, Paper, Scissors</h1>
+        <p class="sink">You know the game, you know the rules.  Now is the time to choose your weapon!</p>
+        <h2>Your Play</h2>
+        <div class="cardbox">
+            <button id="playerRock" class="card raise">
+                <span class="fa-regular fa-hand-fist fa-2xl fa-flip-horizontal"></span>
+                <span class="sr-only">Rock</span>
+            </button>
+            <button id="playerPaper" class="card raise">
+                <span class="fa-regular fa-hand fa-2xl fa-flip-horizontal"></span>
+                <span class="sr-only">Paper</span>
+            </button>
+            <button id="playerScissors" class="card raise">
+                <span class="fa-regular fa-hand-scissors fa-2xl fa-rotate-90"></span>
+                <span class="sr-only">Scissors</span>
+            </button>
+        </div>
+        <h2>Computer's Play</h2>
+        <div class="cardbox">
+            <div id="computerRock" class="card raise">
+                <span class="fa-regular fa-hand-fist fa-2xl fa-flip-horizontal" aria-hidden="true"></span>
+                <span class="sr-only">Rock</span>
+            </div>
+            <div id="computerPaper" class="card raise">
+                <span class="fa-regular fa-hand fa-2xl fa-flip-horizontal" aria-hidden="true"></span>
+                <span class="sr-only">Paper</span>
+            </div>
+            <div id="computerScissors" class="card raise">
+                <span class="fa-regular fa-hand-scissors fa-2xl fa-rotate-90" aria-hidden="true"></span>
+                <span class="sr-only">Scissors</span>
+            </div>
+        </div>
+        <p id="result" class="sink">Score: 0 wins / 0 rounds</p>
+    </div>
     <script type="text/javascript" src="./js/game.js"></script>
 </body>
 

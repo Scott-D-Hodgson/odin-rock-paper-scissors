@@ -1,80 +1,117 @@
-function getComputerChoice() {
-    let option = Math.floor((Math.random() * 300) % 3);
-    switch (option) {
-        case 0:
-            return "Rock";
-        case 1:
-            return "Paper";
-        case 2:
-            return "Scissors";
-    };
-}
+let roundCounter = 0;
+let playerWin = 0;
+let options = ["Rock", "Paper", "Scissor"];
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase().trim();
-    computerSelection = computerSelection.toLowerCase().trim();
-    if (playerSelection === computerSelection) {
-        return "Tie";
-    };
-    let result = {
-        won: false,
-        text: ""
-    };
-    let winPlay = "";
-    let losePlay = "";
-    switch (playerSelection) {
-        case "rock":
-            if (computerSelection === "scissors") {
-                result.won = true;
-                winPlay = "Rock";
-                losePlay = "Scissors";
-            } else {
-                winPlay = "Paper";
-                losePlay = "Rock";
-            };
+function getChoice() {
+    let result = Math.floor((Math.random() * 300) % 3);
+    let computer = null;
+    switch (result) {
+        case 0:
+            computer = document.getElementById("computerRock");
             break;
-        case "paper":
-            if (computerSelection === "rock") {
-                result.won = true;
-                winPlay = "Paper";
-                losePlay = "Rock";
-            } else {
-                winPlay = "Scissors";
-                losePlay = "Paper";
-            };
+        case 1:
+            computer = document.getElementById("computerPaper");
             break;
-        case "scissors":
-            if (computerSelection === "paper") {
-                result.won = true;
-                winPlay = "Scissors";
-                losePlay = "Paper";
-            } else {
-                winPlay = "Rock";
-                losePlay = "Scissors";
-            };
+        case 2:
+            computer = document.getElementById("computerScissors");
             break;
     };
-    result.text = `You ${result.won ? "Won" : "Lose"}! ${winPlay} beats ${losePlay}`;
     return result;
 }
 
-function game() {
-    let roundsPlayed = 0;
-    let wonByPlayer = 0;
-    for (let i = 0; i < 5; i++) {
-        let result = playRound(
-            prompt("Choose 'rock', 'paper', or 'scissors'"),
-            getComputerChoice()
-        );
-        roundsPlayed++;
-        if (result.wonByPlayer) {
-            wonByPlayer++;
-        };
-        console.log(result.text);
+function setChoice(result) {
+    let player = null;
+    switch (result) {
+        case 0:
+            player = document.getElementById("playerRock");
+            break;
+        case 1:
+            player = document.getElementById("playerPaper");
+            break;
+        case 2:
+            player = document.getElementById("playerScissors");
+            break;
     };
-    console.log(`Rounds played: ${ roundsPlayed }`)
+    return result;
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-game();
+function resetDisplay() {
+    let elms = document.querySelectorAll("div.selected, button.selected");
+    if (elms) {
+        elms.forEach((item) => {
+            item.classList.remove("selected");
+        });
+    };
+}
+
+function updateStats(player, computer) {
+    roundCounter++;
+    if (player !== computer) {
+        switch (player) {
+            case 0:
+                if (computer === 2) {
+                    playerWin++;
+                };
+                break;
+            case 1:
+                if (computer === 0) {
+                    playerWin++;
+                };
+                break;
+            case 2:
+                if (computer === 1) {
+                    playerWin++;
+                };
+                break;
+        };
+    };
+}
+
+function updateDisplay(player, computer) {
+    switch (player) {
+        case 0:
+            document.getElementById("playerRock").classList.add("selected");
+            break;
+        case 1:
+            document.getElementById("playerPaper").classList.add("selected");
+            break;
+        case 2:
+            document.getElementById("playerScissors").classList.add("selected");
+            break;
+    };
+    switch (computer) {
+        case 0:
+            document.getElementById("computerRock").classList.add("selected");
+            break;
+        case 1:
+            document.getElementById("computerPaper").classList.add("selected");
+            break;
+        case 2:
+            document.getElementById("computerScissors").classList.add("selected");
+            break;
+    };
+    let result = document.getElementById("result");
+    result.innerText = `Score: ${playerWin} wins / ${roundCounter} rounds`
+}
+
+function play(player, computer) {
+    resetDisplay();
+    updateStats(player, computer);
+    updateDisplay(player, computer);
+    return;
+}
+
+(function () {
+    let button = document.getElementById("playerRock");
+    button.addEventListener("click", function () {
+        play(setChoice(0), getChoice());
+    });
+    button = document.getElementById("playerPaper");
+    button.addEventListener("click", function () {
+        play(setChoice(1), getChoice());
+    });
+    button = document.getElementById("playerScissors");
+    button.addEventListener("click", function () {
+        play(setChoice(2), getChoice());
+    });
+})();

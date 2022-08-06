@@ -1,0 +1,78 @@
+body {
+    background-color: #97defc;
+    color: #581845;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 1rem;
+}
+
+.content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.raise {
+    box-shadow: 5px 5px 5px #6a9bb0,
+        -5px -5px 5px #f5fcff;
+    border-radius: 10px;
+}
+
+.sink {
+    box-shadow: inset 5px 5px 5px #6a9bb0,
+        inset -5px -5px 5px #f5fcff;
+    border-radius: 10px;
+}
+
+h1 {
+    margin: 15px;
+    text-align: center;
+}
+
+h2 {
+    margin: 15px;
+    text-align: left;
+}
+
+p {
+    margin: 15px;
+    padding: 15px;
+}
+
+button {
+    background-color: inherit;
+    color: inherit;
+    font: inherit;
+    border-style: none;
+}
+
+button.raise:hover, button.raise:focus {
+    box-shadow: 7px 7px 7px #6a9bb0,
+        -7px -7px 7px #f5fcff;
+    outline: none;
+    background-color: #581845;
+    color: #97defc;
+}
+
+button.selected, div.selected {
+    box-shadow: inset 5px 5px 5px #6a9bb0,
+        inset -5px -5px 5px #f5fcff;
+    background-color: #581845;
+    color: #97defc;
+}
+
+.cardbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.card {
+    flex: 1;
+    width: 20%;
+    height: 100px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

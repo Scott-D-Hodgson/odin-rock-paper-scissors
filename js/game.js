@@ -16,9 +16,6 @@ function getChoice() {
             computer = document.getElementById("computerScissors");
             break;
     };
-    if (computer) {
-        computer.classList.add("selected");
-    };
     return result;
 }
 
@@ -35,24 +32,19 @@ function setChoice(result) {
             player = document.getElementById("playerScissors");
             break;
     };
-    if (player) {
-        player.classList.add("selected");
-    };
     return result;
 }
 
-function update() {
-    let result = document.getElementById("result");
-    result.innerText = `Score: ${playerWin} wins / ${roundCounter} rounds`
-}
-
-function play(player, computer) {
+function resetDisplay() {
     let elms = document.querySelectorAll("div.selected, button.selected");
     if (elms) {
         elms.forEach((item) => {
             item.classList.remove("selected");
         });
     };
+}
+
+function updateStats(player, computer) {
     roundCounter++;
     if (player !== computer) {
         switch (player) {
@@ -73,7 +65,39 @@ function play(player, computer) {
                 break;
         };
     };
-    update();
+}
+
+function updateDisplay(player, computer) {
+    switch (player) {
+        case 0:
+            document.getElementById("playerRock").classList.add("selected");
+            break;
+        case 1:
+            document.getElementById("playerPaper").classList.add("selected");
+            break;
+        case 2:
+            document.getElementById("playerScissors").classList.add("selected");
+            break;
+    };
+    switch (computer) {
+        case 0:
+            document.getElementById("computerRock").classList.add("selected");
+            break;
+        case 1:
+            document.getElementById("computerPaper").classList.add("selected");
+            break;
+        case 2:
+            document.getElementById("computerScissors").classList.add("selected");
+            break;
+    };
+    let result = document.getElementById("result");
+    result.innerText = `Score: ${playerWin} wins / ${roundCounter} rounds`
+}
+
+function play(player, computer) {
+    resetDisplay();
+    updateStats(player, computer);
+    updateDisplay(player, computer);
     return;
 }
 
